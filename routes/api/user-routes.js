@@ -54,6 +54,7 @@ router.put('/:id', (req, res) => {
     User.update(req.body, {
         attributes: { exclude: ['password'] },
         where: {
+            individualHooks: true,
             id: req.params.id
         }
     })
